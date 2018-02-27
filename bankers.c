@@ -76,7 +76,7 @@ int safe(int process[],int avail[],int max[][r],int allot[][r],int need[][r])
 
     if(found==0)
     {
-      printf("system is not int the safe state\n");
+      printf("system is not in the safe state\n");
       return 0;
     }
   }
@@ -131,6 +131,11 @@ void resource_request(int process[],int avail[],int max[][r],int allot[][r],int 
          printf("request cannot be granted\n");
     else
     {
+      /*printf("xyz available is:\n");
+      for(i=0;i<r;i++)
+       printf("%d ",avail[i]);
+
+       //printf("\n");*/
       for(i=0;i<r;i++)
       {
         avail[i] -= request[i];
@@ -138,7 +143,7 @@ void resource_request(int process[],int avail[],int max[][r],int allot[][r],int 
 
       }
 
-      printf("the need matrix is \n");
+     /* printf("the need matrix is \n");
 
       for(i=0;i<p;i++)
       {
@@ -160,9 +165,9 @@ void resource_request(int process[],int avail[],int max[][r],int allot[][r],int 
           printf("%d ",allot[i][j]);
         }
         printf("\n");
-      }
+      }*/
 
-      printf("the avail resources is\n");
+      printf("the avail resource is\n");
       for(i=0;i<r;i++)
         printf("%d ",avail[i]);
 
@@ -224,7 +229,7 @@ int main()
 
     safe(process,avail,max,allot,need);
 
-    printf("the need matrix is \n");
+   /* printf("the need matrix is \n");
 
     for(i=0;i<p;i++)
     {
@@ -235,7 +240,7 @@ int main()
       }
       printf("\n");
     }
-
+*/
     resource_request(process,avail,max,allot,need);
 
 
